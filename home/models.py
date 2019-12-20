@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.safestring import mark_safe
 from wagtail.admin.edit_handlers import StreamFieldPanel, MultiFieldPanel, FieldPanel
 from wagtail.contrib.settings.models import BaseSetting
 from wagtail.contrib.settings.registry import register_setting
@@ -23,7 +24,7 @@ class MainBlock(blocks.StructBlock):
 
 
 class AboutBlock(blocks.StructBlock):
-
+    text_id = blocks.CharBlock(label='Identificador de Navegacion ')
     image_profile = ImageChooserBlock(required=True, label='Imagen de Perfil', help_text='Seleccione una de Perfil para tu seccion "Sobre mi". Se recomienda imagen de 150x150')
     text_name = blocks.CharBlock(label='Ingrese nombre: ')
     text_profile = blocks.CharBlock(label='Ingrese rol de tu perfil: ')
@@ -41,11 +42,30 @@ class AboutBlock(blocks.StructBlock):
         label = 'Seccion Sobre Mi'
 
 
+class ServiceBlock(blocks.StructBlock):
+    text_id = blocks.CharBlock(label='Identificador de Navegacion ')
+    text_title = blocks.CharBlock(label='Ingrese Titulo del bloque Servicios: ')
+    text_subtitle = blocks.CharBlock(label='Ingrese subtitulo del bloque servicio.')
+    service_list = blocks.ListBlock(blocks.StructBlock([
+        ('icon', blocks.CharBlock(label='Ícono de servicio: ', max_length=255, blank=True, null=True,
+                                  required=False, help_text=mark_safe('Agregue el texto que referencia un icono.'
+                                                                      ' Ejemplo: ion-code-working Lista de iconos: '
+                                                                      '<a target="_blank" '
+                                                                      'href="https://ionicons.com/v2/cheatsheet.html">'
+                                                                      'Íconos</a>'))),
+        ('name_service', blocks.CharBlock(label='Ingrese el nombre del servicio')),
+        ('description_service', blocks.TextBlock(label='Ingrese una breve descripcion del servicio.')),
+    ]), label='Añadir Servicio', required=False)
+
+    class Meta:
+        template = 'blocks/main/service_main_block.html'
+        label = 'Mis servicios'
+
+
 LAYOUT_STREAMBLOCKS = [
+    ('ServiceBlock', ServiceBlock()),
     ('aboutblock', AboutBlock()),
     ('mainblock', MainBlock()),
-
-
 ]
 
 

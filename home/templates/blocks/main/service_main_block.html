@@ -1,0 +1,38 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+<!--/ Section Services Star /-->
+  <section id="{{ value.text_id }}" class="services-mf route">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="title-box text-center">
+            <h3 class="title-a">
+              {{ value.text_title }}
+            </h3>
+            <p class="subtitle-a">
+              {{ value.text_subtitle }}
+            </p>
+            <div class="line-mf"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          {% for service in value.service_list %}
+              <div class="col-md-4">
+              <div class="service-box">
+                <div class="service-ico">
+                  <span class="ico-circle"><i class="{{ service.icon }}"></i></span>
+                </div>
+                <div class="service-content">
+                  <h2 class="s-title">{{ service.name_service }}</h2>
+                  <p class="s-description text-center">
+                    {{ service.description_service }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!--/ Section Services End /-->
