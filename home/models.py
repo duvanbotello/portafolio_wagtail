@@ -104,6 +104,7 @@ class HomePage(Page):
 class CongGeneralSettings(BaseSetting):
 
     text_menu = models.CharField(verbose_name='Ingrese Texto de menu', null=False, max_length=15)
+    text_copyright = models.CharField(verbose_name='Ingrese Texto pie de pagina: Copyright', null=True, max_length=255)
 
     class Meta:
         verbose_name = 'Configuraciones Generales'
@@ -112,7 +113,7 @@ class CongGeneralSettings(BaseSetting):
         MultiFieldPanel(
             [
                 FieldPanel('text_menu'),
-
+                FieldPanel('text_copyright'),
             ],
             heading='Configuraciones página'
         ),
