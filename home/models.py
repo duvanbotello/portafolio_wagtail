@@ -62,7 +62,19 @@ class ServiceBlock(blocks.StructBlock):
         label = 'Mis servicios'
 
 
+class ExperienceBlock(blocks.StructBlock):
+    num_work = blocks.IntegerBlock(label='Ingrese el numero de trabajos completados')
+    num_years = blocks.IntegerBlock(label='Ingrese años de experiencia')
+    num_clients = blocks.IntegerBlock(label='Ingrese cantidad de clientes')
+    num_awards = blocks.IntegerBlock(label='Ingrese Cantidad de premios obtenidos')
+
+    class Meta:
+        template = 'blocks/main/experience_main_block.html'
+        label = 'Mi experiencia'
+
+
 LAYOUT_STREAMBLOCKS = [
+    ('ExperienceBlock', ExperienceBlock()),
     ('ServiceBlock', ServiceBlock()),
     ('aboutblock', AboutBlock()),
     ('mainblock', MainBlock()),

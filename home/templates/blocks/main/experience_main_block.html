@@ -1,0 +1,53 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+<div class="section-counter paralax-mf bg-image" style="background-image: url({% static 'img/counters-bg.jpg' %})">
+    <div class="overlay-mf"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3 col-lg-3">
+          <div class="counter-box counter-box pt-4 pt-md-0">
+            <div class="counter-ico">
+              <span class="ico-circle"><i class="ion-checkmark-round"></i></span>
+            </div>
+            <div class="counter-num">
+              <p class="counter">{{ value.num_work }}</p>
+              <span class="counter-text">TRABAJOS COMPLETADOS</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3 col-lg-3">
+          <div class="counter-box pt-4 pt-md-0">
+            <div class="counter-ico">
+              <span class="ico-circle"><i class="ion-ios-calendar-outline"></i></span>
+            </div>
+            <div class="counter-num">
+              <p class="counter">{{ value.num_years }}</p>
+              <span class="counter-text">AÑOS DE EXPERIENCIA</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3 col-lg-3">
+          <div class="counter-box pt-4 pt-md-0">
+            <div class="counter-ico">
+              <span class="ico-circle"><i class="ion-ios-people"></i></span>
+            </div>
+            <div class="counter-num">
+              <p class="counter">{{ value.num_clients }}</p>
+              <span class="counter-text">TOTAL CLIENTES</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3 col-lg-3">
+          <div class="counter-box pt-4 pt-md-0">
+            <div class="counter-ico">
+              <span class="ico-circle"><i class="ion-ribbon-a"></i></span>
+            </div>
+            <div class="counter-num">
+              <p class="counter"> {{ value.num_awards }} </p>
+              <span class="counter-text">PREMIOS GANADO</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
