@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load wagtailcore_tags static homepage_tag %}
 
 {% block body_class %}template-homepage{% endblock %}
 
@@ -8,14 +9,21 @@
 {% comment %}
 Delete the line below if you're just getting started and want to remove the welcome screen!
 {% endcomment %}
-<link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
+
 {% endblock extra_css %}
 
 {% block content %}
 
+    {% render_header page %}
+    {% include_block page.body %}
+     <!--/ Intro Skew Star /-->
+  <!--/ Intro Skew Star /-->
+
+
+
 {% comment %}
 Delete the line below if you're just getting started and want to remove the welcome screen!
 {% endcomment %}
-{% include 'home/welcome_page.html' %}
+
 
 {% endblock content %}

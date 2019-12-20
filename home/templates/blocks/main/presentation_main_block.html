@@ -1,0 +1,59 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+<!--/ Intro Skew End /-->
+  <section id="about" class="about-mf sect-pt4 route">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="box-shadow-full">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-sm-6 col-md-5">
+                    <div class="about-img">
+                        {% image value.image_profile original as img %}
+                      <img src="{{ img.url }}" class="img-fluid rounded b-shadow-a" alt="">
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-7">
+                    <div class="about-info">
+                      <p><span class="title-s">Nombre: </span> <span>{{ value.text_name }}</span></p>
+                      <p><span class="title-s">Perfil: </span> <span>{{ value.text_profile }}</span></p>
+                      <p><span class="title-s">Email: </span> <span>{{ value.text_email }}</span></p>
+                      <p><span class="title-s">Telefono: </span> <span>{{ value.text_phone }}</span></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="skill-mf">
+                  <p class="title-s">Habilidades</p>
+
+                    {% for profile in value.Skill_list %}
+                        <span>{{ profile.name_technology }}</span> <span class="pull-right">{{ profile.num_skill }}%</span>
+                      <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: {{profile.num_skill}}%;" aria-valuenow="{{ profile.num_skill }}" aria-valuemin="0"
+                          aria-valuemax="100"></div>
+                      </div>
+                    {% endfor %}
+
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="about-me pt-4 pt-md-0">
+                  <div class="title-box-2">
+                    <h5 class="title-left">
+                      Sobre mi
+                    </h5>
+                  </div>
+
+                  <p class="lead">
+                    {{ value.text_about }}
+                  </p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

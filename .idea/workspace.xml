@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24b10a8f-2dca-429c-9623-2d26a61e9c85" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/portfolio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/portfolio.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio/static/css/portfolio.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio/static/js/portfolio.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/css/welcome_page.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/home/home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/home_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio/settings/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/portfolio/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +19,13 @@
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -92,7 +101,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576785018108</updated>
-      <workItem from="1576785019657" duration="1243000" />
+      <workItem from="1576785019657" duration="5442000" />
+      <workItem from="1576790678245" duration="10382000" />
     </task>
     <servers />
   </component>
@@ -108,29 +118,29 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="283" y="27" width="790" height="741" key="CommitChangelistDialog2/0.27.1366.741@0.27.1366.741" timestamp="1576785540247" />
-    <state x="460" y="160" width="424" height="491" key="FileChooserDialogImpl" timestamp="1576785502605">
+    <state x="460" y="160" width="424" height="491" key="FileChooserDialogImpl" timestamp="1576790027609">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="460" y="160" width="424" height="491" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1576785502605" />
-    <state width="662" height="174" key="GridCell.Tab.0.bottom" timestamp="1576786406466">
+    <state x="460" y="160" width="424" height="491" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1576790027609" />
+    <state width="1324" height="174" key="GridCell.Tab.0.bottom" timestamp="1576796818129">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="662" height="174" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1576786406466" />
-    <state width="662" height="174" key="GridCell.Tab.0.center" timestamp="1576786406465">
+    <state width="1324" height="174" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1576796818129" />
+    <state width="1324" height="174" key="GridCell.Tab.0.center" timestamp="1576796818129">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="662" height="174" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1576786406465" />
-    <state width="662" height="174" key="GridCell.Tab.0.left" timestamp="1576786406465">
+    <state width="1324" height="174" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1576796818129" />
+    <state width="1324" height="174" key="GridCell.Tab.0.left" timestamp="1576796818128">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="662" height="174" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1576786406465" />
-    <state width="662" height="174" key="GridCell.Tab.0.right" timestamp="1576786406466">
+    <state width="1324" height="174" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1576796818128" />
+    <state width="1324" height="174" key="GridCell.Tab.0.right" timestamp="1576796818129">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="662" height="174" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1576786406466" />
-    <state x="187" y="31" width="992" height="737" key="SettingsEditor" timestamp="1576785507082">
+    <state width="1324" height="174" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1576796818129" />
+    <state x="187" y="31" width="992" height="737" key="SettingsEditor" timestamp="1576790030629">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="187" y="31" width="992" height="737" key="SettingsEditor/0.27.1366.741@0.27.1366.741" timestamp="1576785507082" />
+    <state x="187" y="31" width="992" height="737" key="SettingsEditor/0.27.1366.741@0.27.1366.741" timestamp="1576790030629" />
   </component>
 </project>
