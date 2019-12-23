@@ -1,0 +1,42 @@
+<!D{% extends "base.html" %}
+{% load static wagtailcore_tags  homepage_tag wagtailimages_tags widget_tweaks %}
+
+{% block content %}
+
+    {% get_parent_page page as page_parent %}
+
+    <!--/ Section Contact-Footer Star /-->
+  <section class="paralax-mf footer-paralax bg-image route" style="background-image: url({% static 'img/overlay-bg.jpg' %})">
+    <div class="overlay-mf"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="contact-mf">
+            <div id="contact" class="box-shadow-full">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="title-box-2">
+                    <h5 class="title-left">
+                      {{ page.title }}
+                    </h5>
+                  </div>
+                  <div>
+                      <div class="alert alert-success" role="alert">
+                            {{ page.thank_you_text|richtext }}
+                        </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    {% for item in page_parent.homepage.footer %}
+        {{ item }}
+    {% endfor %}
+
+{% endblock %}

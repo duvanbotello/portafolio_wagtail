@@ -26,6 +26,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 INSTALLED_APPS = [
     'home',
     'search',
+    'widget_tweaks',
 
     'wagtail.contrib.settings',
     'wagtail.contrib.forms',
@@ -163,3 +164,13 @@ WAGTAIL_SITE_NAME = "portfolio"
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = 'http://example.com'
+
+
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.megaterios.co'
+EMAIL_HOST_PASSWORD = ''  # my gmail password
+EMAIL_HOST_USER = ''  # my gmail username
+EMAIL_PORT = 587
+EMAIL_SEND = ""
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

@@ -1,0 +1,71 @@
+<!D{% extends "base.html" %}
+{% load static wagtailcore_tags  homepage_tag wagtailimages_tags widget_tweaks %}
+
+{% block content %}
+
+    {% get_parent_page page as page_parent %}
+
+    <!--/ Section Contact-Footer Star /-->
+  <section class="paralax-mf footer-paralax bg-image route" style="background-image: url({% static 'img/overlay-bg.jpg' %})">
+    <div class="overlay-mf"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="contact-mf">
+            <div id="contact" class="box-shadow-full">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="title-box-2">
+                    <h5 class="title-left">
+                      {{ page.title }}
+                    </h5>
+                  </div>
+                  <div>
+
+                        <form action="{% pageurl page %}" method="POST" role="form" class="contactForm">
+                        {% csrf_token %}
+                        {% if form.non_field_errors %}
+                                <div id="errormessage">
+                                      {% for error in form.non_field_errors %}
+                                          {{ error }}
+                                      {% endfor %}
+                                </div>
+                            {% endif %}
+
+                    <div class="row">
+                                {% for field in form.visible_fields %}
+
+                                    <div class="col-md-12 mb-3">
+                                        <div class="form-group">
+                                            {{ field.label }}
+
+
+                                                {% render_field field class+="form-control" placeholder=field.help_text %}
+
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                    <div class="col-lg-4 offset-lg-4 col-sm-12">
+                                <input name="submit" type="submit" id="submit" class="button button-a button-big button-rouded" value="Enviar">
+                            </div>
+                    </div>
+
+
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    {% for item in page_parent.homepage.footer %}
+        {{ item }}
+    {% endfor %}
+
+{% endblock %}
