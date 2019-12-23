@@ -1,0 +1,201 @@
+{% load static i18n wagtailcore_tags wagtailimages_tags wagtailroutablepage_tags wagtailuserbar puput_tags homepage_tag %}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>
+        {% block title %}
+            {{ blog_page.title }}{% if blog_page.description %} | {{ blog_page.description }}{% endif %}
+        {% endblock title %}
+    </title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="title"
+          content="{% block meta_title %}
+                        {% if blog_page.seo_title %}
+                            {{ blog_page.seo_title }}
+                        {% else %}
+                            {{ blog_page.title }}
+                        {% endif %}
+                   {% endblock meta_title %}"/>
+    <meta name="description"
+          content="{% block meta_description %}
+                        {{ blog_page.search_description }}
+                   {% endblock meta_description %}"/>
+    {% block social_share %}{% endblock social_share %}
+    <link rel="canonical" href="{% block canonical %}{% canonical_url %}{% endblock canonical %}"/>
+
+
+    {% block css %}
+        <!-- Favicons -->
+          <link href="{% static 'img/favicon.png' %}" rel="icon">
+          <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+          <!-- Bootstrap CSS File -->
+          <link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+          <!-- Libraries CSS Files -->
+          <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+          <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+          <link href="{% static 'lib/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+          <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+          <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
+
+          <!-- Main Stylesheet File -->
+          <link href="{% static '/css/style.css' %}" rel="stylesheet">
+
+          <!-- =======================================================
+            Theme Name: DevFolio
+            Theme URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
+            Author: BootstrapMade.com
+            License: https://bootstrapmade.com/license/
+          ======================================================= -->
+
+    {% endblock %}
+</head>
+<body>
+{% block blog_header %}
+
+     {% search_parent page as page_parent %}
+
+    {% render_header page_parent.0.homepage %}
+      <!--/ Intro Skew Star /-->
+    {% if blog_page.header_image %}
+        {% image blog_page.header_image original as header_image %}
+        <div class="intro intro-single route bg-image" style="background-image: url({{ header_image.url }})">
+        <div class="overlay-mf"></div>
+        <div class="intro-content display-table">
+          <div class="table-cell">
+            <div class="container">
+              <h1 class="text-white mb-4">{{ page.title }}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+      <!--/ Intro Skew End /-->
+{% endblock blog_header %}
+
+{% wagtailuserbar %}
+
+<div class="container container-blog mt-5">
+    <div class="row">
+        <div class="col-sm-7 col-md-8">
+            {% block content %}{% endblock content %}
+            {% block extra_content %}{% endblock extra_content %}
+        </div>
+
+        <div class="col-sm-5 col-md-4">
+            <div class="blog_sidebar">
+                <div class="widget-sidebar sidebar-search">
+                    <h5 class="sidebar-title">Buscar</h5>
+                    <a href="{% feeds_url blog_page %}" target="_blank" title="RSS">
+                         <i class="fa fa-rss-square"></i> <span>{% trans 'Feed RSS' %}</span>
+                    </a>
+                    <div class="sidebar-content">
+              <form name="search_form" class="search_form" method="get" action="{% routablepageurl blog_page 'entries_search' %}">
+                <div class="input-group">
+                    <input class="form-control" type="search" name="q" placeholder="{% trans 'Search' %}">
+                  <span class="input-group-btn">
+                      <button class="btn btn-secondary btn-search" type="submit"><i class="fa fa-search"></i></button>
+                    </button>
+                  </span>
+                </div>
+              </form>
+            </div>
+                </div>
+
+            <div class="widget-sidebar">
+            <h5 class="sidebar-title">Publicación recientes</h5>
+            <div class="sidebar-content">
+              <ul class="list-sidebar">
+                  {% if blog_page.display_last_entries %}
+                        {% recent_entries blog_page.num_last_entries %}
+                {% endif %}
+              </ul>
+            </div>
+             </div>
+
+            <div class="widget-sidebar">
+            <h5 class="sidebar-title">Entradas populares</h5>
+            <div class="sidebar-content">
+              <ul class="list-sidebar">
+                  {% if blog_page.display_popular_entries %}
+                        {% popular_entries blog_page.num_popular_entries %}
+                {% endif %}
+              </ul>
+            </div>
+             </div>
+
+        <div class="widget-sidebar widget-tags">
+            <h5 class="sidebar-title">Tags</h5>
+            <div class="sidebar-content">
+              <ul>
+                  {% if blog_page.display_tags %}
+                        {% tags_list %}
+                {% endif %}
+
+              </ul>
+            </div>
+          </div>
+
+            <div class="widget-sidebar">
+            <h5 class="sidebar-title">Categorias</h5>
+            <div class="sidebar-content">
+              <ul class="list-sidebar">
+                   {% if blog_page.display_categories %}
+                        {% categories_list %}
+                     {% endif %}
+              </ul>
+            </div>
+            </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+  <section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url({% static 'img/overlay-bg.jpg' %})">
+    <div class="overlay-mf"></div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="copyright-box">
+              <p class="copyright">&copy; Copyright <strong>{{ settings.home.CongGeneralSettings.text_copyright }}</strong>. Todos los derechos reservados</p>
+              <div class="credits">
+                <!--
+                  All the links in the footer should remain intact.
+                  You can delete the links only if you purchased the pro version.
+                  Licensing information: https://bootstrapmade.com/license/
+                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=DevFolio
+                -->
+                Designed by <a href="https://bootstrapmade.com/" target="_blank">BootstrapMade</a>
+                  <br>
+                  Developed by <a href="#" target="_blank">DuvanBotello</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </section>
+{% block js %}
+    <!-- JavaScript Libraries -->
+          <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+          <script src="{% static 'lib/jquery/jquery-migrate.min.js' %}"></script>
+          <script src="{% static 'lib/popper/popper.min.js' %}"></script>
+          <script src="{% static 'lib/bootstrap/js/bootstrap.min.js' %}"></script>
+          <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+          <script src="{% static 'lib/counterup/jquery.waypoints.min.js' %}"></script>
+          <script src="{% static 'lib/counterup/jquery.counterup.js' %}"></script>
+          <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+          <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+          <script src="{% static 'lib/typed/typed.min.js' %}"></script>
+          <!-- Contact Form JavaScript File -->
+         <!-- <script src="{% static 'contactform/contactform.js' %}"></script> -->
+
+          <!-- Template Main Javascript File -->
+          <script src="{% static 'js/main.js' %}"></script>
+{% endblock js %}
+</body>
+</html>

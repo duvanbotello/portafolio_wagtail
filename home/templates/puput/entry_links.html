@@ -1,0 +1,19 @@
+{% load wagtailroutablepage_tags puput_tags %}
+<ul>
+                <li>
+                  <span class="ion-ios-person"></span>
+                  <a href="{% routablepageurl blog_page 'entries_by_author' entry.owner.username %}">{{ entry.owner.username }}</a>
+                </li>
+                  <li>
+                    <i class="fa fa-calendar"></i>
+                    {{ entry.date|date:"DATE_FORMAT" }}
+                </li>
+
+    {% if blog_page.display_comments %}
+        <li>
+            <i class="fa fa-comments"></i>
+            {{ entry.num_comments }}
+        </li>
+    {% endif %}
+
+</ul>

@@ -1,0 +1,11 @@
+{% load i18n wagtailimages_tags puput_tags %}
+
+
+    {% for entry in entries %}
+        <li>
+            <a href="{% entry_url entry blog_page %}">{{ entry.title }}</a>
+        </li>
+
+    {% empty %}
+        {% trans 'No entries yet' %}
+    {% endfor %}
