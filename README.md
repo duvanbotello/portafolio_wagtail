@@ -6,13 +6,21 @@
 
 ### ¿Que puedo hacer con este portafolio?
 - Bloque de Bienvenida.
+  ![alt text](https://github.com/duvanbotello/portafolio_wagtail/blob/master/documentation/images/mainblock.png)
 - Bloque "Sobre Mi".
+  ![alt text](https://github.com/duvanbotello/portafolio_wagtail/blob/master/documentation/images/blockabout.png)
 - Bloque Mis servicios.
+  ![alt text](https://github.com/duvanbotello/portafolio_wagtail/blob/master/documentation/images/blockservices.png)
 - Bloque de Experiencia.
+  ![alt text](https://github.com/duvanbotello/portafolio_wagtail/blob/master/documentation/images/blockexperience.png)
 - Bloque de contacto.
+  ![alt text](https://github.com/duvanbotello/portafolio_wagtail/blob/master/documentation/images/blockcontacto.png)
 - Bloque de testimonios.
+  ![alt text](https://github.com/duvanbotello/portafolio_wagtail/blob/master/documentation/images/blocktestimonials.png)
 - Bloque de blog.
+  ![alt text](https://github.com/duvanbotello/portafolio_wagtail/blob/master/documentation/images/blog.png)
 - Bloque de portafolio.
+  -- Bloque en construccion
 
 ### Clone Project
 ```
