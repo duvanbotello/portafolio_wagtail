@@ -79,6 +79,31 @@ class ServiceBlock(blocks.StructBlock):
         label = 'Mis servicios'
 
 
+class ContactBlock(blocks.StructBlock):
+    text_id = blocks.CharBlock(label='Identificador de Navegacion ')
+    text_title_main = blocks.CharBlock(label='Titulo Principal:', help_text='Ejemplo: Envíenos un mensaje')
+    text_title_secondary = blocks.CharBlock(label='Titulo Segundario:', help_text='Ejemplo: Otros canales..')
+    text_description = blocks.RichTextBlock(label='Ingrese una Descripcion de contacto: ',
+                                      help_text='Se recomienda un texto menor a 40 palabras')
+    text_address = blocks.CharBlock(label='Direccion de residencia:', help_text='329 WASHINGTON ST BOSTON, MA 02108')
+    number_contact = blocks.CharBlock(label='Telefono de contacto:', help_text='(617) 557-0089')
+    email = blocks.EmailBlock(label='Correo de Contacto:', help_text='contact@example.com')
+
+    social_list = blocks.ListBlock(blocks.StructBlock([
+        ('icon', blocks.CharBlock(label='Ícono de redsocial: ', max_length=255, blank=True, null=True,
+                                  required=False, help_text=mark_safe('Agregue el texto que referencia un icono.'
+                                                                      ' Ejemplo: ion-social-facebook Lista de iconos: '
+                                                                      '<a target="_blank" '
+                                                                      'href="https://ionicons.com/v2/cheatsheet.html">'
+                                                                      'Íconos</a>'))),
+        ('url_social', blocks.URLBlock(label='Ingrese url de red social')),
+    ]), label='Añadir Red Social', required=False)
+
+    class Meta:
+        template = 'blocks/main/contact_main_block.html'
+        label = 'Bloque de contacto'
+
+
 class ExperienceBlock(blocks.StructBlock):
     num_work = blocks.IntegerBlock(label='Ingrese el numero de trabajos completados')
     num_years = blocks.IntegerBlock(label='Ingrese años de experiencia')
@@ -91,6 +116,7 @@ class ExperienceBlock(blocks.StructBlock):
 
 
 LAYOUT_STREAMBLOCKS = [
+    ('ContactBlock', ContactBlock()),
     ('ExperienceBlock', ExperienceBlock()),
     ('ServiceBlock', ServiceBlock()),
     ('aboutblock', AboutBlock()),
@@ -143,7 +169,7 @@ class Email(models.Model):
         blank=False,
         verbose_name=('Email'),
         default='',
-        help_text=('Ingrese email a donde llegarán los datos de contacto enviados por el formulario'),
+        help_text='Ingrese email a donde llegarán los datos de contacto enviados por el formulario',
     )
     panels = [
         FieldPanel('email'),
@@ -153,7 +179,7 @@ class Email(models.Model):
 @register_setting(icon='mail')
 class EmailSettings(BaseSetting, ClusterableModel):
     class Meta:
-        verbose_name = ('Email')
+        verbose_name = 'Email'
 
     panels = [
         MultiFieldPanel(
@@ -161,28 +187,28 @@ class EmailSettings(BaseSetting, ClusterableModel):
                 InlinePanel('email_setting', label='Emails de envío de datos')
 
             ],
-            heading=('Emails')
+            heading='Emails'
         ),
     ]
 
 
 FORM_FIELD_CHOICES = (
-    ('singleline', ('Single line text')),
-    ('multiline', ('Multi-line text')),
-    ('email', ('Email')),
-    ('number', ('Number')),
-    ('url', ('URL')),
-    ('dropdown', ('Drop down')),
-    ('multiselect', ('Multiple select')),
-    ('date', ('Date')),
-    ('datetime', ('Date/time')),
-    ('hidden', ('Hidden field')),
+    ('singleline', 'Single line text'),
+    ('multiline', 'Multi-line text'),
+    ('email', 'Email'),
+    ('number', 'Number'),
+    ('url', 'URL'),
+    ('dropdown', 'Drop down'),
+    ('multiselect', 'Multiple select'),
+    ('date', 'Date'),
+    ('datetime', 'Date/time'),
+    ('hidden', 'Hidden field'),
 )
 
 
 class FormField(AbstractFormField):
-    field_type = models.CharField(verbose_name=('field type'), max_length=16, choices=FORM_FIELD_CHOICES)
-    icon = models.CharField(verbose_name=('Ícono'), max_length=255, blank=False, null=False, default="",
+    field_type = models.CharField(verbose_name='field type', max_length=16, choices=FORM_FIELD_CHOICES)
+    icon = models.CharField(verbose_name='Ícono', max_length=255, blank=False, null=False, default="",
                             help_text=mark_safe('Agregue el texto que referencia un icono.'
                                                 ' Ejemplo: <b>ti-location-pin</b>. Lista de iconos: '
                                                 '<a target="_blank" '
@@ -201,16 +227,16 @@ class FormField(AbstractFormField):
 
 class FormPage(AbstractEmailForm):
 
-    intro = RichTextField(blank=True, verbose_name=("Texto de introducción"),
-                          help_text=("Ingrese el texto que se mostrará encima del formulario"))
-    thank_you_text = RichTextField(blank=True, verbose_name=("Texto después de envío"),
-                                   help_text=("Ingrese texto para indicar que el formulario ha sido enviado"))
+    intro = RichTextField(blank=True, verbose_name="Texto de introducción",
+                          help_text="Ingrese el texto que se mostrará encima del formulario")
+    thank_you_text = RichTextField(blank=True, verbose_name="Texto después de envío",
+                                   help_text="Ingrese texto para indicar que el formulario ha sido enviado")
 
     parent_page_types = ['home.HomePage']
 
     content_panels = AbstractEmailForm.content_panels + [
         FieldPanel('intro', classname="full"),
-        InlinePanel('form_fields', label=("Campos del formulario")),
+        InlinePanel('form_fields', label="Campos del formulario"),
         FieldPanel('thank_you_text', classname="full"),
         MultiFieldPanel([
             FieldRowPanel([
@@ -222,8 +248,8 @@ class FormPage(AbstractEmailForm):
     ]
 
     class Meta:
-        verbose_name = ('Formulario')
-        verbose_name_plural = ('Formularios')
+        verbose_name = 'Formulario'
+        verbose_name_plural = 'Formularios'
 
     def send_mail(self, form):
         addresses = [x.strip() for x in self.to_address.split(',')]

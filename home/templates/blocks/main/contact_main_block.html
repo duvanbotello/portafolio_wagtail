@@ -1,0 +1,80 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+<div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="contact-mf">
+            <div id="{{ value.text_id }}" class="box-shadow-full">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="title-box-2">
+                    <h5 class="title-left">
+                      {{ value.text_title_main }}
+                    </h5>
+                  </div>
+                  <div>
+                      <form action="" method="post" role="form" class="contactForm">
+                      <div id="sendmessage">Your message has been sent. Thank you!</div>
+                      <div id="errormessage"></div>
+                      <div class="row">
+                        <div class="col-md-12 mb-3">
+                          <div class="form-group">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Tu nombre" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                            <div class="validation"></div>
+                          </div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                          <div class="form-group">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Tu correo electrónico" data-rule="email" data-msg="Please enter a valid email" />
+                            <div class="validation"></div>
+                          </div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <input type="text" class="form-control" name="subject" id="subject" placeholder="Tema de contacto" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                              <div class="validation"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                          <div class="form-group">
+                            <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Mensaje"></textarea>
+                            <div class="validation"></div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <button type="submit" class="button button-a button-big button-rouded">Enviar mensaje</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="title-box-2 pt-4 pt-md-0">
+                    <h5 class="title-left">
+                      {{ value.text_title_secondary }}
+                    </h5>
+                  </div>
+                  <div class="more-info">
+                    <p class="lead">
+                      {{ value.text_description }}
+                    </p>
+                    <ul class="list-ico">
+                      <li><span class="ion-ios-location"></span>{{ value.text_address }}</li>
+                      <li><span class="ion-ios-telephone"></span> {{ value.number_contact }} </li>
+                      <li><span class="ion-email"></span> {{ value.email }} </li>
+                    </ul>
+                  </div>
+                  <div class="socials">
+                    <ul>
+                        {% for social in value.social_list %}
+                            <li><a target="_blank" href="{{ social.url_social }}"><span class="ico-circle"><i class="{{ social.icon }}"></i></span></a></li>
+                        {% endfor %}
+
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
