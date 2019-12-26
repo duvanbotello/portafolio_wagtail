@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24b10a8f-2dca-429c-9623-2d26a61e9c85" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/blocks/main/contact_main_block.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/blocks/main/contact_main_block.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/blocks/main/experience_main_block.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/blocks/main/experience_main_block.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/blocks/main/header_block.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/blocks/main/header_block.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/blocks/main/mainblock_main_block.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/blocks/main/mainblock_main_block.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/blocks/main/presentation_main_block.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/blocks/main/presentation_main_block.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/blocks/main/service_main_block.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/blocks/main/service_main_block.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/blocks/main/testimonials_main_block.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/blocks/main/testimonials_main_block.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/blocks/menu/base_link_block.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/blocks/menu/base_link_block.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/blocks/menu/document_link_block.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/blocks/menu/document_link_block.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/el_pagination/show_more.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/el_pagination/show_more.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/form_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/form_email.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/home/form_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/form_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/home/form_page_landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/form_page_landing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/home/home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/home_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/home/welcome_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/welcome_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio/settings/base.py" afterDir="false" />
-    </list>
+    <list default="true" id="24b10a8f-2dca-429c-9623-2d26a61e9c85" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,6 +38,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/documentation/images" />
       <recent name="$PROJECT_DIR$/home/templates" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -120,7 +102,7 @@
       <workItem from="1576849739527" duration="13500000" />
       <workItem from="1576876768717" duration="1713000" />
       <workItem from="1577110076329" duration="24421000" />
-      <workItem from="1577379967585" duration="12917000" />
+      <workItem from="1577379967585" duration="13257000" />
     </task>
     <servers />
   </component>
