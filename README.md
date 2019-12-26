@@ -1,7 +1,7 @@
 
 
 ###### Version wagtail: `2.7`
-##### Version django: `2.2.9`
+###### Version django: `2.2.9`
 
 
 ### Clone Project
