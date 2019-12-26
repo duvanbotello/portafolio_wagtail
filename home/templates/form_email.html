@@ -1,180 +1,355 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width"/>
     <title>{{ subject }}</title>
 
     <style type="text/css">
         /*////// RESET STYLES //////*/
-        body{height:100% !important; margin:0; padding:0; width:100% !important;}
-        table{border-collapse:separate;}
-        img, a img{border:0; outline:none; text-decoration:none;}
-        h1, h2, h3, h4, h5, h6{margin:0; padding:0;}
-        p{margin: 1em 0;}
+        body {
+            height: 100% !important;
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+        }
+
+        table {
+            border-collapse: separate;
+        }
+
+        img, a img {
+            border: 0;
+            outline: none;
+            text-decoration: none;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            margin: 1em 0;
+        }
 
         /*////// CLIENT-SPECIFIC STYLES //////*/
-        .ReadMsgBody{width:100%;} .ExternalClass{width:100%;}
-        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div{line-height:100%;}
-        table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;}
-        #outlook a{padding:0;}
-        img{-ms-interpolation-mode: bicubic;}
-        body, table, td, p, a, li, blockquote{-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%;}
+        .ReadMsgBody {
+            width: 100%;
+        }
+
+        .ExternalClass {
+            width: 100%;
+        }
+
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+            line-height: 100%;
+        }
+
+        table, td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        #outlook a {
+            padding: 0;
+        }
+
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+
+        body, table, td, p, a, li, blockquote {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
 
         /*////// GENERAL STYLES //////*/
-        img{ max-width: 100%; height: auto; }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
 
         /*////// TABLET STYLES //////*/
         @media only screen and (max-width: 620px) {
 
             /*////// GENERAL STYLES //////*/
-            #foxeslab-email .table1 { width: 90% !important;}
-            #foxeslab-email .table1-2 { width: 98% !important; margin-left: 1%; margin-right: 1%;}
-            #foxeslab-email .table1-3 { width: 98% !important; margin-left: 1%; margin-right: 1%;}
-            #foxeslab-email .table1-4 { width: 98% !important; margin-left: 1%; margin-right: 1%;}
-            #foxeslab-email .table1-5 { width: 90% !important; margin-left: 5%; margin-right: 5%;}
+            #foxeslab-email .table1 {
+                width: 90% !important;
+            }
 
-            #foxeslab-email .tablet_no_float { clear: both; width: 100% !important; margin: 0 auto !important; text-align: center !important; }
-            #foxeslab-email .tablet_wise_float { clear: both; float: none !important; width: auto !important; margin: 0 auto !important; text-align: center !important; }
+            #foxeslab-email .table1-2 {
+                width: 98% !important;
+                margin-left: 1%;
+                margin-right: 1%;
+            }
 
-            #foxeslab-email .tablet_hide { display: none !important; }
+            #foxeslab-email .table1-3 {
+                width: 98% !important;
+                margin-left: 1%;
+                margin-right: 1%;
+            }
 
-            #foxeslab-email .image1 { width: 98% !important; }
-            #foxeslab-email .image1-290 { width: 100% !important; max-width: 290px !important; }
+            #foxeslab-email .table1-4 {
+                width: 98% !important;
+                margin-left: 1%;
+                margin-right: 1%;
+            }
 
-            .center_content{ text-align: center !important; }
-            .center_image{ margin: 0 auto !important; }
-            .center_button{ width: 50% !important;margin-left: 25% !important;max-width: 250px !important; }
-            .centerize{margin: 0 auto !important;}
+            #foxeslab-email .table1-5 {
+                width: 90% !important;
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+
+            #foxeslab-email .tablet_no_float {
+                clear: both;
+                width: 100% !important;
+                margin: 0 auto !important;
+                text-align: center !important;
+            }
+
+            #foxeslab-email .tablet_wise_float {
+                clear: both;
+                float: none !important;
+                width: auto !important;
+                margin: 0 auto !important;
+                text-align: center !important;
+            }
+
+            #foxeslab-email .tablet_hide {
+                display: none !important;
+            }
+
+            #foxeslab-email .image1 {
+                width: 98% !important;
+            }
+
+            #foxeslab-email .image1-290 {
+                width: 100% !important;
+                max-width: 290px !important;
+            }
+
+            .center_content {
+                text-align: center !important;
+            }
+
+            .center_image {
+                margin: 0 auto !important;
+            }
+
+            .center_button {
+                width: 50% !important;
+                margin-left: 25% !important;
+                max-width: 250px !important;
+            }
+
+            .centerize {
+                margin: 0 auto !important;
+            }
         }
 
 
         /*////// MOBILE STYLES //////*/
-        @media only screen and (max-width: 480px){
+        @media only screen and (max-width: 480px) {
             /*////// CLIENT-SPECIFIC STYLES //////*/
-            body{width:100% !important; min-width:100% !important;} /* Force iOS Mail to render the email at full width. */
-            table[class="flexibleContainer"]{ width: 100% !important; }/* to prevent Yahoo Mail from rendering media query styles on desktop */
+            body {
+                width: 100% !important;
+                min-width: 100% !important;
+            }
 
+            /* Force iOS Mail to render the email at full width. */
+            table[class="flexibleContainer"] {
+                width: 100% !important;
+            }
+
+            /* to prevent Yahoo Mail from rendering media query styles on desktop */
             /*////// GENERAL STYLES //////*/
-            img[class="flexibleImage"]{height:auto !important; width:100% !important;}
+            img[class="flexibleImage"] {
+                height: auto !important;
+                width: 100% !important;
+            }
 
-            #foxeslab-email .table1 { width: 98% !important; }
-            #foxeslab-email .no_float { clear: both; width: 100% !important; margin: 0 auto !important; text-align: center !important; }
-            #foxeslab-email .wise_float {	clear: both;	float: none !important;	width: auto !important;	margin: 0 auto !important;	text-align: center !important;	}
+            #foxeslab-email .table1 {
+                width: 98% !important;
+            }
 
-            #foxeslab-email .mobile_hide { display: none !important; }
-            .auto_height{height: auto !important;}
+            #foxeslab-email .no_float {
+                clear: both;
+                width: 100% !important;
+                margin: 0 auto !important;
+                text-align: center !important;
+            }
+
+            #foxeslab-email .wise_float {
+                clear: both;
+                float: none !important;
+                width: auto !important;
+                margin: 0 auto !important;
+                text-align: center !important;
+            }
+
+            #foxeslab-email .mobile_hide {
+                display: none !important;
+            }
+
+            .auto_height {
+                height: auto !important;
+            }
         }
     </style>
 </head>
 
 
 <!-- section-1 "navbar" -->
-<table class="table_full editable-bg-color bg_color_f8f8f8 editable-bg-image" bgcolor="#f8f8f8" width="100%" align="center" mc:repeatable="castellab" mc:variant="Header" cellspacing="0" cellpadding="0" border="0" style="background-image: url(#); background-position: top center; background-repeat: no-repeat; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" background="#">
-    <tbody><tr>
+<table class="table_full editable-bg-color bg_color_f8f8f8 editable-bg-image" bgcolor="#f8f8f8" width="100%"
+       align="center" mc:repeatable="castellab" mc:variant="Header" cellspacing="0" cellpadding="0" border="0"
+       style="background-image: url(#); background-position: top center; background-repeat: no-repeat; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
+       background="#">
+    <tbody>
+    <tr>
         <td>
-            <table class="table1" width="600" align="center" border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto;">
-                <tbody><tr><td height="20"></td></tr>
+            <table class="table1" width="600" align="center" border="0" cellspacing="0" cellpadding="0"
+                   style="margin: 0 auto;">
+                <tbody>
+                <tr>
+                    <td height="20"></td>
+                </tr>
                 <tr>
                     <td>
                         <!-- Logo -->
-                        <table class="tablet_no_float" width="600" align="left" border="0" cellspacing="0" cellpadding="0">
-                            <tbody><tr style="text-align: center;">
+                        <table class="tablet_no_float" width="600" align="left" border="0" cellspacing="0"
+                               cellpadding="0">
+                            <tbody>
+                            <tr style="text-align: center;">
                                 <td class="editable-img">
                                     <a href="https://testing.clinicanorte.com.co">
                                         <img editable="true" mc:edit="image101" class="center_image"
                                              src="https://testing.clinicanorte.com.co/media/images/logo-again.e82c5680.fill-367x80.png"
-                                             style="display:block; line-height:0; font-size:0; border:0;margin: 0 auto;" border="0" alt="image">
+                                             style="display:block; line-height:0; font-size:0; border:0;margin: 0 auto;"
+                                             border="0" alt="image">
                                     </a>
                                 </td>
                             </tr>
                             <!-- margin-bottom -->
-                            <tr><td height="20"></td></tr>
-                            </tbody></table><!-- END logo -->
+                            <tr>
+                                <td height="20"></td>
+                            </tr>
+                            </tbody>
+                        </table><!-- END logo -->
                     </td>
                 </tr>
-                </tbody></table>
+                </tbody>
+            </table>
         </td>
     </tr>
-    </tbody></table><!-- END wrapper -->
-
-
-
-
+    </tbody>
+</table><!-- END wrapper -->
 
 
 <!-- section-3 -->
-<table class="table_full editable-bg-color bg_color_f8f8f8 editable-bg-image" bgcolor="#ffffff" width="100%" align="center" mc:repeatable="castellab" mc:variant="Header" cellspacing="0" cellpadding="0" border="0" style="border-bottom: 1px solid rgb(235, 235, 235); background-image: url(&quot;#&quot;); background-position: center top; background-repeat: no-repeat; border-collapse: collapse; background-color: rgb(255, 255, 255);" background="#">
+<table class="table_full editable-bg-color bg_color_f8f8f8 editable-bg-image" bgcolor="#ffffff" width="100%"
+       align="center" mc:repeatable="castellab" mc:variant="Header" cellspacing="0" cellpadding="0" border="0"
+       style="border-bottom: 1px solid rgb(235, 235, 235); background-image: url(&quot;#&quot;); background-position: center top; background-repeat: no-repeat; border-collapse: collapse; background-color: rgb(255, 255, 255);"
+       background="#">
     <!-- padding-top -->
-    <tbody><tr><td height="60"></td></tr>
+    <tbody>
+    <tr>
+        <td height="60"></td>
+    </tr>
     <tr>
         <td>
-            <table class="table1" width="600" align="center" border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto;">
+            <table class="table1" width="600" align="center" border="0" cellspacing="0" cellpadding="0"
+                   style="margin: 0 auto;">
                 <!-- heading -->
-                <tbody><tr>
-                    <td mc:edit="text301" align="center" class="text_color_282828" style="color: #282828; font-size: 24px; font-weight: 500; font-family: Raleway, Helvetica, sans-serif; mso-line-height-rule: exactly;">
+                <tbody>
+                <tr>
+                    <td mc:edit="text301" align="center" class="text_color_282828"
+                        style="color: #282828; font-size: 24px; font-weight: 500; font-family: Raleway, Helvetica, sans-serif; mso-line-height-rule: exactly;">
                         <div class="editable-text">
-                            <span class="text_container">{% if title %}{{ title }}{% else %}{{ subject }}{% endif %}</span>
+                            <span class="text_container">{% if title %}{{ title }}{% else %}
+                                {{ subject }}{% endif %}</span>
                         </div>
                     </td>
                 </tr>
 
                 <!-- horizontal gap -->
-                <tr><td height="20"></td></tr>
+                <tr>
+                    <td height="20"></td>
+                </tr>
 
                 <!-- details -->
                 <tr>
-                    <td mc:edit="text302" align="center" class="text_color_666666" style="color: #666666; font-size: 13px;line-height: 2; font-weight: 400; font-family: 'Open Sans', Helvetica, sans-serif; mso-line-height-rule: exactly;">
+                    <td mc:edit="text302" align="center" class="text_color_666666"
+                        style="color: #666666; font-size: 13px;line-height: 2; font-weight: 400; font-family: 'Open Sans', Helvetica, sans-serif; mso-line-height-rule: exactly;">
                         <div class="editable-text" style="line-height: 2;">
-                            <span class="text_container">{% if message %}{{ message }}{% else %}{{ subject }}{% endif %}</span>
+                            <span class="text_container">{% if message %}{{ message }}{% else %}
+                                {{ subject }}{% endif %}</span>
                         </div>
                     </td>
                 </tr>
                 <!-- padding-bottom -->
-                <tr><td height="50"></td></tr>
+                <tr>
+                    <td height="50"></td>
+                </tr>
 
                 <!-- row-data -->
 
-                    <tr>
-                        <td>
-                            <!-- column-1  -->
-                            <table class="table1-2" align="left" border="0" cellspacing="0"
-                                   cellpadding="0" style="margin-bottom: 20px; width: 100%">
-                                <tbody><tr>
-                                    <td bgcolor="#ffffff" style="padding: 20px 25px;border: 1px solid #ebebeb;">
-                                        {% for data in render_data %}
+                <tr>
+                    <td>
+                        <!-- column-1  -->
+                        <table class="table1-2" align="left" border="0" cellspacing="0"
+                               cellpadding="0" style="margin-bottom: 20px; width: 100%">
+                            <tbody>
+                            <tr>
+                                <td bgcolor="#ffffff" style="padding: 20px 25px;border: 1px solid #ebebeb;">
+                                    {% for data in render_data %}
                                         <table>
-                                            <tbody><tr>
-                                                <td width="50" align="left" valign="top" rowspan="2" style="padding-top: 20px;">
+                                            <tbody>
+                                            <tr>
+                                                <td width="50" align="left" valign="top" rowspan="2"
+                                                    style="padding-top: 20px;">
                                                     <!-- image -->
-                                                    <div style="border-style: none !important; display: block; border: 0 !important;" class="editable-img" href="">
-                                                        <img editable="true" mc:edit="image301" src="https://testing.clinicanorte.com.co/static/images/s29_bullet.png" style="display:block; line-height:0; font-size:0; border:0;" border="0" alt="">
+                                                    <div style="border-style: none !important; display: block; border: 0 !important;"
+                                                         class="editable-img" href="">
+                                                        <img editable="true" mc:edit="image301"
+                                                             src="https://testing.clinicanorte.com.co/static/images/s29_bullet.png"
+                                                             style="display:block; line-height:0; font-size:0; border:0;"
+                                                             border="0" alt="">
                                                     </div>
                                                 </td>
-                                                <td mc:edit="text303" align="left" class="text_color_242a33" style="color: #242a33; font-size: 15px;line-height: 2; font-weight: 600; font-family: 'Open Sans', Helvetica, sans-serif; mso-line-height-rule: exactly;">
-                                                    <div class="editable-text"><multiline>{{ data.title }}</multiline></div>
+                                                <td mc:edit="text303" align="left" class="text_color_242a33"
+                                                    style="color: #242a33; font-size: 15px;line-height: 2; font-weight: 600; font-family: 'Open Sans', Helvetica, sans-serif; mso-line-height-rule: exactly;">
+                                                    <div class="editable-text">
+                                                        <multiline>{{ data.title }}</multiline>
+                                                    </div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td mc:edit="text304" align="left" class="text_color_666666" style="color: #666666; font-size: 13px;font-style: italic;line-height: 2; font-weight: 500; font-family: 'Open Sans', Helvetica, sans-serif; mso-line-height-rule: exactly;">
+                                                <td mc:edit="text304" align="left" class="text_color_666666"
+                                                    style="color: #666666; font-size: 13px;font-style: italic;line-height: 2; font-weight: 500; font-family: 'Open Sans', Helvetica, sans-serif; mso-line-height-rule: exactly;">
                                                     <div class="editable-text" style="line-height: 2;">
                                                         <span class="text_container">{{ data.data }}</span>
                                                     </div>
                                                 </td>
                                             </tr>
-                                            </tbody></table>
-                                        {% endfor %}
-                                    </td>
-                                </tr>
-                                </tbody></table><!-- END column-1 -->
-                        </td>
-                    </tr><!--END row-data -->
+                                            </tbody>
+                                        </table>
+                                    {% endfor %}
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table><!-- END column-1 -->
+                    </td>
+                </tr><!--END row-data -->
 
 
-                </tbody></table><!-- END container -->
+                </tbody>
+            </table><!-- END container -->
         </td>
     </tr><!-- END row-1 -->
-    </tbody></table><!-- END wrapper -->
+    </tbody>
+</table><!-- END wrapper -->
 
 <!-- section-9 "footer"  -->
 <table class="table_full editable-bg-color bg_color_f8f8f8 editable-bg-image" bgcolor="#f8f8f8"
@@ -182,35 +357,52 @@
        cellpadding="0" border="0" style="border-bottom: 1px solid #ebebeb;background-image: url(#);
        background-position: top center; background-repeat: no-repeat; border-collapse: collapse; mso-table-lspace: 0pt;
        mso-table-rspace: 0pt;" background="#">
-    <tbody><tr>
+    <tbody>
+    <tr>
         <td>
-            <table class="table1" width="600" align="center" border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto;">
-                <tbody><tr><td height="30"></td></tr>
+            <table class="table1" width="600" align="center" border="0" cellspacing="0" cellpadding="0"
+                   style="margin: 0 auto;">
+                <tbody>
+                <tr>
+                    <td height="30"></td>
+                </tr>
                 <tr>
                     <td>
                         <!-- Logo -->
                         <table class="no_float" width="138" align="left" border="0" cellspacing="0" cellpadding="0">
-                            <tbody><tr>
+                            <tbody>
+                            <tr>
                                 <td align="center">
                                     <a href="https://testing.clinicanorte.com.co" class="editable-img">
-                                        <img editable="true" mc:edit="image901" src="https://testing.clinicanorte.com.co/media/images/logo-again.e82c5680.fill-367x80.png" width="138" style="display:block; line-height:0; font-size:0; border:0; margin: 0 auto !important;" border="0" alt="image">
+                                        <img editable="true" mc:edit="image901"
+                                             src="https://testing.clinicanorte.com.co/media/images/logo-again.e82c5680.fill-367x80.png"
+                                             width="138"
+                                             style="display:block; line-height:0; font-size:0; border:0; margin: 0 auto !important;"
+                                             border="0" alt="image">
                                     </a>
                                 </td>
                             </tr>
                             <!-- margin-bottom -->
-                            <tr><td height="25"></td></tr>
-                            </tbody></table><!-- END logo -->
+                            <tr>
+                                <td height="25"></td>
+                            </tr>
+                            </tbody>
+                        </table><!-- END logo -->
 
                         <table class="no_float" width="" align="right" border="0" cellspacing="0" cellpadding="0">
-                            <tbody><tr>
+                            <tbody>
+                            <tr>
                                 <!-- Copyright -->
                                 <td>
                                     <table align="center" border="0" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
-                                            <td mc:edit="text702" align="left" class="center_content text_color_282828" style="line-height: 1; color: #282828; font-size: 14px; font-weight: 500; font-family: 'lato', Helvetica, sans-serif; mso-line-height-rule: exactly;">
+                                        <tbody>
+                                        <tr>
+                                            <td mc:edit="text702" align="left" class="center_content text_color_282828"
+                                                style="line-height: 1; color: #282828; font-size: 14px; font-weight: 500; font-family: 'lato', Helvetica, sans-serif; mso-line-height-rule: exactly;">
                                                 <div class="editable-text" style="line-height: 1">
 													<span class="text_container">
-														<a href="https://testing.clinicanorte.com.co" class="text_color_282828"
+														<a href="https://testing.clinicanorte.com.co"
+                                                           class="text_color_282828"
                                                            style="text-decoration: none; color: #282828;">© Clínica Norte - Todos los derechos reservados.
                                                         </a>
 													</span>
@@ -222,14 +414,19 @@
                                 </td>
                             </tr>
                             <!-- margin-bottom -->
-                            <tr><td height="25"></td></tr>
-                            </tbody></table>
+                            <tr>
+                                <td height="25"></td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </td>
                 </tr>
-                </tbody></table>
+                </tbody>
+            </table>
         </td>
     </tr>
-    </tbody></table><!-- End Wrapper -->
+    </tbody>
+</table><!-- End Wrapper -->
 
 
 </body>

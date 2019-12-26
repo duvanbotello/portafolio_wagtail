@@ -5,8 +5,9 @@
 
         {% is_menu_item_dropdown value as has_dropdown %}
 
-        <li class="nav-item" >
-            <a class="nav-link js-scroll" href="{% block url %}#{% endblock %}" {% if value.open_page_new_window %} target="_blank" {% endif %}>
+        <li class="nav-item">
+            <a class="nav-link js-scroll" href="{% block url %}#{% endblock %}" {% if value.open_page_new_window %}
+               target="_blank" {% endif %}>
                 {% if value.display_text %}
                     {{ value.display_text|safe }}
                 {% elif value.page %}
