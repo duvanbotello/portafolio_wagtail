@@ -106,8 +106,12 @@
             <span>{% trans 'No results found.' %}</span>
         {% endfor %}
   </section>
-        <div class="pagination">
-            {% show_paginator %}
-        </div>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+              {% show_paginator %}
+          </ul>
+        </nav>
+
+
     {% endwith %}
 {% endblock content %}
