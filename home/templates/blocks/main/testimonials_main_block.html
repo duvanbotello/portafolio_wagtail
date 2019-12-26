@@ -5,19 +5,23 @@
       <div class="row">
         <div class="col-md-12">
           <div id="testimonial-mf" class="owl-carousel owl-theme">
-            <div class="testimonial-box">
+
+              {% for testimonial in value.Testimonial_list %}
+                  {% image testimonial.image_profile original as img %}
+                   <div class="testimonial-box">
               <div class="author-test">
-                <img src="img/testimonial-2.jpg" alt="" class="rounded-circle b-shadow-a">
-                <span class="author">Xavi Alonso</span>
+                <img src="{{ img.url }}" alt="" class="rounded-circle b-shadow-a">
+                <span class="author">{{ testimonial.text_name }}</span>
               </div>
               <div class="content-test">
                 <p class="description lead">
-                  Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit.
+                  {{ testimonial.text_Testimonial }}
                 </p>
                 <span class="comit"><i class="fa fa-quote-right"></i></span>
               </div>
             </div>
+              {% endfor %}
+
           </div>
         </div>
       </div>

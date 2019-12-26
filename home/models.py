@@ -115,7 +115,27 @@ class ExperienceBlock(blocks.StructBlock):
         label = 'Mi experiencia'
 
 
+class TestimonialBlock(blocks.StructBlock):
+
+    text_id = blocks.CharBlock(label='Identificador de Navegacion ')
+
+    Testimonial_list = blocks.ListBlock(blocks.StructBlock([
+        ('image_profile', ImageChooserBlock(required=True, label='Imagen perfil del cliente',
+                                      help_text='Seleccione una de Perfil del autor'
+                                                'Se recomienda imagen de 150x150')),
+        ('text_name', blocks.CharBlock(label='Ingrese nombre completo del autor: ')),
+        ('text_Testimonial', blocks.TextBlock(label='Ingrese Descripcion del Testimonio: ',
+                                      help_text='En este apartado se recomienda escribir un '
+                                                'texto no mayor a un parrafo')),
+    ]), label='Añadir Testimonio', required=False)
+
+    class Meta:
+        template = 'blocks/main/testimonials_main_block.html'
+        label = 'Bloque de Testimonios'
+
+
 LAYOUT_STREAMBLOCKS = [
+    ('TestimonialBlock', TestimonialBlock()),
     ('ContactBlock', ContactBlock()),
     ('ExperienceBlock', ExperienceBlock()),
     ('ServiceBlock', ServiceBlock()),
