@@ -1,3 +1,4 @@
+from django.utils.safestring import mark_safe
 from wagtail.core import blocks
 from wagtail.images.blocks import ImageChooserBlock
 
@@ -25,6 +26,26 @@ class AboutBlock(blocks.StructBlock):
     class Meta:
         template = 'blocks/main/presentation_main_block.html'
         label = 'Seccion Sobre Mi'
+
+
+class PortfolioBlockMain(blocks.StructBlock):
+    text_id = blocks.CharBlock(label='Identificador de Navegacion ')
+    text_title = blocks.CharBlock(label='Ingrese Titulo de bloque: ')
+    subtitle = blocks.CharBlock(label='Ingrese subtitulo del bloque: ')
+
+    project_list = blocks.ListBlock(blocks.StructBlock([
+        ('project_image', ImageChooserBlock(required=True, label='Imagen de proyecto',
+                                      help_text='Seleccione una de Perfil para tu seccion "Sobre mi". '
+                                                'Se recomienda imagen de 150x150')),
+        ('project_description', blocks.RichTextBlock(label='Ingrese una Descripcion del proyecto: ',
+                                      help_text='En este apartado se recomienda escribir un '
+                                                'texto no mayor a un parrafo')),
+        ('project_url', blocks.URLBlock(label='Ingrese url de DEMO del proyecto.')),
+    ]), label='Añadir Proyecto', required=False)
+
+    class Meta:
+        template = 'blocks/main/portfolioblock_main_block.html'
+        label = 'Nuevo Portafolio'
 
 
 class ServiceBlock(blocks.StructBlock):

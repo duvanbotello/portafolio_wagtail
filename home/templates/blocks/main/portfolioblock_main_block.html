@@ -1,0 +1,39 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+<!--/ Section Portfolio Star /-->
+<section id="{{ value.text_id }}" class="portfolio-mf sect-pt4 route">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="title-box text-center">
+                    <h3 class="title-a">
+                        {{ value.text_title }}
+                    </h3>
+                    <p class="subtitle-a">
+                        {{ value.subtitle }}
+                    </p>
+                    <div class="line-mf"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for project in value.project_list %}
+                {% image project.project_image original as img %}
+                <div class="col-md-4">
+                <div class="work-box">
+                    <a href="{{ img.url }}" data-lightbox="gallery-mf">
+                        <div class="work-img">
+                            <img src="{{ img.url }}" alt="" class="img-fluid">
+                        </div>
+                        <div class="work-content">
+                            {{ project.project_description }}
+                            <a href="{{project.project_url }}" target="_blank" class="btn btn-success">DEMO</a>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!--/ Section Portfolio End /-->

@@ -23,25 +23,17 @@ from wagtail.snippets.edit_handlers import SnippetChooserPanel
 from wagtail.snippets.models import register_snippet
 
 from home.blocks.wagtail_blocks import TestimonialBlock, ContactBlock, ExperienceBlock, ServiceBlock, AboutBlock, \
-    MainBlock
+    MainBlock, PortfolioBlockMain
 from home.snippet_models import MenuPage
 
 
-
-
-
 LAYOUT_STREAMBLOCKS2 = [
-    ('TestimonialBlock', TestimonialBlock()),
-    ('ContactBlock', ContactBlock()),
-    ('ExperienceBlock', ExperienceBlock()),
-    ('ServiceBlock', ServiceBlock()),
-    ('aboutblock', AboutBlock()),
-    ('mainblock', MainBlock()),
+    ('block_portfolio', PortfolioBlockMain()),
 ]
 
 
 @register_snippet
-class Book(models.Model):
+class Portfolio(models.Model):
     title = models.CharField(max_length=255)
 
     body = StreamField(LAYOUT_STREAMBLOCKS2, null=True, blank=True)
@@ -60,7 +52,7 @@ class Book(models.Model):
 
 
 class portfolioBlock(blocks.StructBlock):
-    protfolio = ListBlock(SnippetChooserBlock(Book))
+    protfolio = ListBlock(SnippetChooserBlock(Portfolio))
 
     class Meta:
         template = 'blocks/main/portfolio_main_block.html'
