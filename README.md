@@ -21,6 +21,19 @@
   ![alt text](https://github.com/duvanbotello/portafolio_wagtail/blob/master/documentation/images/blog.png)
 - Bloque de portafolio.
   -- Bloque en construccion
+  
+### ¿Otras caracteristicas de nuestro portafolio?
+- Administrador de paginas.
+- Formularios dinamicos
+- Multisitio
+- Administrador de roles y usuarios
+
+### Conoce nuestro administrador
+
+![alt text](https://github.com/duvanbotello/portafolio_wagtail/blob/master/documentation/adminhome.png)
+![alt text](https://github.com/duvanbotello/portafolio_wagtail/blob/master/documentation/adminblog.png)
+![alt text](https://github.com/duvanbotello/portafolio_wagtail/blob/master/documentation/wagtailadmin.png)
+
 
 ### Clone Project
 ```
