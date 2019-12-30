@@ -1,11 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24b10a8f-2dca-429c-9623-2d26a61e9c85" name="Default Changelist" comment="" />
+    <list default="true" id="24b10a8f-2dca-429c-9623-2d26a61e9c85" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/home/home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/home_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/puput/entry_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/puput/entry_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templatetags/homepage_tag.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/templatetags/homepage_tag.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio/settings/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio/urls.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
@@ -37,16 +60,17 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/documentation/images" />
-      <recent name="$PROJECT_DIR$/home/templates" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/home/templates/puput" />
       <recent name="$PROJECT_DIR$/home/templates" />
       <recent name="$PROJECT_DIR$/portfolio/static" />
       <recent name="$PROJECT_DIR$/portfolio/static/css" />
       <recent name="$PROJECT_DIR$/portfolio/static/js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/home" />
+      <recent name="$PROJECT_DIR$/documentation/images" />
+      <recent name="$PROJECT_DIR$/home/templates" />
     </key>
   </component>
   <component name="RunManager">
@@ -102,7 +126,10 @@
       <workItem from="1576849739527" duration="13500000" />
       <workItem from="1576876768717" duration="1713000" />
       <workItem from="1577110076329" duration="24421000" />
-      <workItem from="1577379967585" duration="13257000" />
+      <workItem from="1577379967585" duration="17914000" />
+      <workItem from="1577455370275" duration="15548000" />
+      <workItem from="1577483283446" duration="2211000" />
+      <workItem from="1577733483576" duration="292000" />
     </task>
     <servers />
   </component>
@@ -126,38 +153,38 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="460" y="160" width="424" height="491" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1576790027609" />
-    <state width="1324" height="174" key="GridCell.Tab.0.bottom" timestamp="1577389895874">
+    <state width="1324" height="424" key="GridCell.Tab.0.bottom" timestamp="1577490755216">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1324" height="174" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1577389895874" />
-    <state width="1324" height="174" key="GridCell.Tab.0.center" timestamp="1577389895873">
+    <state width="1324" height="424" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1577490755216" />
+    <state width="1324" height="424" key="GridCell.Tab.0.center" timestamp="1577490755215">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1324" height="174" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1577389895873" />
-    <state width="1324" height="174" key="GridCell.Tab.0.left" timestamp="1577389895872">
+    <state width="1324" height="424" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1577490755215" />
+    <state width="1324" height="424" key="GridCell.Tab.0.left" timestamp="1577490755214">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1324" height="174" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1577389895872" />
-    <state width="1324" height="174" key="GridCell.Tab.0.right" timestamp="1577389895873">
+    <state width="1324" height="424" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1577490755214" />
+    <state width="1324" height="424" key="GridCell.Tab.0.right" timestamp="1577490755215">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1324" height="174" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1577389895873" />
-    <state width="1324" height="424" key="GridCell.Tab.1.bottom" timestamp="1577145765788">
+    <state width="1324" height="424" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1577490755215" />
+    <state width="1324" height="424" key="GridCell.Tab.1.bottom" timestamp="1577490755217">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1324" height="424" key="GridCell.Tab.1.bottom/0.27.1366.741@0.27.1366.741" timestamp="1577145765788" />
-    <state width="1324" height="424" key="GridCell.Tab.1.center" timestamp="1577145765788">
+    <state width="1324" height="424" key="GridCell.Tab.1.bottom/0.27.1366.741@0.27.1366.741" timestamp="1577490755217" />
+    <state width="1324" height="424" key="GridCell.Tab.1.center" timestamp="1577490755216">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1324" height="424" key="GridCell.Tab.1.center/0.27.1366.741@0.27.1366.741" timestamp="1577145765788" />
-    <state width="1324" height="424" key="GridCell.Tab.1.left" timestamp="1577145765788">
+    <state width="1324" height="424" key="GridCell.Tab.1.center/0.27.1366.741@0.27.1366.741" timestamp="1577490755216" />
+    <state width="1324" height="424" key="GridCell.Tab.1.left" timestamp="1577490755216">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1324" height="424" key="GridCell.Tab.1.left/0.27.1366.741@0.27.1366.741" timestamp="1577145765788" />
-    <state width="1324" height="424" key="GridCell.Tab.1.right" timestamp="1577145765788">
+    <state width="1324" height="424" key="GridCell.Tab.1.left/0.27.1366.741@0.27.1366.741" timestamp="1577490755216" />
+    <state width="1324" height="424" key="GridCell.Tab.1.right" timestamp="1577490755217">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1324" height="424" key="GridCell.Tab.1.right/0.27.1366.741@0.27.1366.741" timestamp="1577145765788" />
+    <state width="1324" height="424" key="GridCell.Tab.1.right/0.27.1366.741@0.27.1366.741" timestamp="1577490755217" />
     <state x="187" y="31" width="992" height="737" key="SettingsEditor" timestamp="1576790030629">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
@@ -166,40 +193,10 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/home/templatetags/homepage_tag.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/home/templatetags/homepage_tag.py</url>
-          <line>12</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/home/templatetags/homepage_tag.py</url>
-          <line>13</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/home/templatetags/homepage_tag.py</url>
-          <line>15</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/home/templatetags/homepage_tag.py</url>
-          <line>10</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/home/templatetags/homepage_tag.py</url>
-          <line>9</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/home/templatetags/homepage_tag.py</url>
-          <line>11</line>
-          <option name="timeStamp" value="8" />
+        <line-breakpoint enabled="true" type="django-line">
+          <url>file://$PROJECT_DIR$/home/templates/blocks/main/portfolio_main_block.html</url>
+          <line>5</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

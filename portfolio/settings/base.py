@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'wagtail.core',
     'wagtail.contrib.routable_page',
     'wagtail.contrib.sitemaps',
+    'wagtail.contrib.modeladmin',
 
     'modelcluster',
     'taggit',
@@ -52,6 +53,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_social_share',
+    'django.contrib.sites',
+    'django_comments',
     'puput',
 ]
 
@@ -67,6 +70,9 @@ MIDDLEWARE = [
     'wagtail.core.middleware.SiteMiddleware',
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
+
+SITE_ID = 1
+COMMENT_MAX_LENGTH = 10
 
 ROOT_URLCONF = 'portfolio.urls'
 

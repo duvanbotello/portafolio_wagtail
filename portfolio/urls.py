@@ -11,10 +11,9 @@ from search import views as search_views
 
 urlpatterns = [
     url(r'^django-admin/', admin.site.urls),
-
     url(r'^admin/', include(wagtailadmin_urls)),
     url(r'^documents/', include(wagtaildocs_urls)),
-
+    url(r'^comments/', include('django_comments.urls')),
     url(r'^search/$', search_views.search, name='search'),
 
     # For anything not caught by a more specific rule above, hand over to

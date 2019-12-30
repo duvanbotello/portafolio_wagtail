@@ -26,9 +26,6 @@ def render_header(context, page):
     return context
 
 
-
-
-
 @register.simple_tag
 def is_menu_item_dropdown(value):
     return \

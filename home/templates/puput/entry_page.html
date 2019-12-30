@@ -1,5 +1,5 @@
 {% extends "puput/base.html" %}
-{% load i18n wagtailcore_tags wagtailimages_tags puput_tags social_share %}
+{% load i18n wagtailcore_tags wagtailimages_tags puput_tags social_share comments %}
 
 {% block title %}
     {{ self.title }} | {{ blog_page.title }}
@@ -236,8 +236,19 @@
             </div>
 
         </section>
+
         {% show_comments %}
+
     </article> /-->
+
+        {% render_comment_list for page %}
+        <div class="card card-block mb-5">
+          <div class="card-body">
+            <h4 class="card-title text-center pb-3">Post your comment</h4>
+              {% render_comment_form for page %}
+          </div>
+        </div>
+
 {% endblock content %}
 
 {% block extra_content %}

@@ -1,137 +1,70 @@
 from django.db import models
 from django.template.loader import render_to_string
+
 from django.utils.html import strip_tags
 from django.utils.safestring import mark_safe
 from modelcluster.fields import ParentalKey
 from modelcluster.models import ClusterableModel
+
 from wagtail.admin.edit_handlers import StreamFieldPanel, MultiFieldPanel, FieldPanel, InlinePanel, FieldRowPanel
 from wagtail.admin.mail import send_mail
+
 from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
 from wagtail.contrib.settings.models import BaseSetting
 from wagtail.contrib.settings.registry import register_setting
 
 
 from wagtail.core import blocks
+from wagtail.core.blocks import ListBlock
 from wagtail.core.models import Page
-from wagtail.images.blocks import ImageChooserBlock
-from wagtail.images.edit_handlers import ImageChooserPanel
-from wagtail.snippets.edit_handlers import SnippetChooserPanel
 from wagtail.core.fields import StreamField, RichTextField
+from wagtail.snippets.blocks import SnippetChooserBlock
+from wagtail.snippets.edit_handlers import SnippetChooserPanel
+from wagtail.snippets.models import register_snippet
+
+from home.blocks.wagtail_blocks import TestimonialBlock, ContactBlock, ExperienceBlock, ServiceBlock, AboutBlock, \
+    MainBlock
 from home.snippet_models import MenuPage
 
 
-class MainBlock(blocks.StructBlock):
-    bg_imagen = ImageChooserBlock(required=True, label='Imagen de fondo de seccion',
-                                  help_text='Seleccione una imagen para el fondo de la seccion de bienvenida. '
-                                            'Se recomienda imagen de 1910x1055')
-    message_welcome = blocks.CharBlock(label='Mensaje de Bienvenida: ')
-    sub_title = blocks.CharBlock(label='Subtitulo de Mensaje de Bienvenida: ',
-                                 help_text='Para efectos de la animacion se debe separar por comas. Ejemplo: '
-                                           'CEO DevFolio,Web Developer,Web Designer,Frontend Developer,Graphic Designer')
+
+
+
+LAYOUT_STREAMBLOCKS2 = [
+    ('TestimonialBlock', TestimonialBlock()),
+    ('ContactBlock', ContactBlock()),
+    ('ExperienceBlock', ExperienceBlock()),
+    ('ServiceBlock', ServiceBlock()),
+    ('aboutblock', AboutBlock()),
+    ('mainblock', MainBlock()),
+]
+
+
+@register_snippet
+class Book(models.Model):
+    title = models.CharField(max_length=255)
+
+    body = StreamField(LAYOUT_STREAMBLOCKS2, null=True, blank=True)
+
+    panels = [
+        FieldPanel('title'),
+        StreamFieldPanel('body'),
+    ]
+
+    def __str__(self):
+        return self.title
 
     class Meta:
-        template = 'blocks/main/mainblock_main_block.html'
-        label = 'Seccion de Bienvenida'
+        verbose_name = 'Portafolio'
+        verbose_name_plural = 'Portafolios'
 
 
-class AboutBlock(blocks.StructBlock):
-    text_id = blocks.CharBlock(label='Identificador de Navegacion ')
-    image_profile = ImageChooserBlock(required=True, label='Imagen de Perfil',
-                                      help_text='Seleccione una de Perfil para tu seccion "Sobre mi". '
-                                                'Se recomienda imagen de 150x150')
-    text_name = blocks.CharBlock(label='Ingrese nombre: ')
-    text_profile = blocks.CharBlock(label='Ingrese rol de tu perfil: ')
-    text_email = blocks.EmailBlock(label='Ingrese tu correo electronico: ')
-    text_phone = blocks.CharBlock(label='Ingrese tu numero de telefono: ')
-    text_about = blocks.RichTextBlock(label='Ingrese una Descripcion de perfil: ',
-                                      help_text='En este apartado se recomienda escribir un '
-                                                'texto no mayor a tres parrafos')
-
-    Skill_list = blocks.ListBlock(blocks.StructBlock([
-        ('name_technology', blocks.CharBlock(label='Ingrese el nombre de tu habilidad.')),
-        ('num_skill',
-         blocks.IntegerBlock(required=True, min_value=1, max_value=100, label='Ingrese numero de habilidad:',
-                             help_text='En una escala del 1 al 100 puedes ingresar la destresa de tu habilidad.')),
-    ]), label='Añadir Habilidades', required=False)
+class portfolioBlock(blocks.StructBlock):
+    protfolio = ListBlock(SnippetChooserBlock(Book))
 
     class Meta:
-        template = 'blocks/main/presentation_main_block.html'
-        label = 'Seccion Sobre Mi'
-
-
-class ServiceBlock(blocks.StructBlock):
-    text_id = blocks.CharBlock(label='Identificador de Navegacion ')
-    text_title = blocks.CharBlock(label='Ingrese Titulo del bloque Servicios: ')
-    text_subtitle = blocks.CharBlock(label='Ingrese subtitulo del bloque servicio.')
-    service_list = blocks.ListBlock(blocks.StructBlock([
-        ('icon', blocks.CharBlock(label='Ícono de servicio: ', max_length=255, blank=True, null=True,
-                                  required=False, help_text=mark_safe('Agregue el texto que referencia un icono.'
-                                                                      ' Ejemplo: ion-code-working Lista de iconos: '
-                                                                      '<a target="_blank" '
-                                                                      'href="https://ionicons.com/v2/cheatsheet.html">'
-                                                                      'Íconos</a>'))),
-        ('name_service', blocks.CharBlock(label='Ingrese el nombre del servicio')),
-        ('description_service', blocks.TextBlock(label='Ingrese una breve descripcion del servicio.')),
-    ]), label='Añadir Servicio', required=False)
-
-    class Meta:
-        template = 'blocks/main/service_main_block.html'
-        label = 'Mis servicios'
-
-
-class ContactBlock(blocks.StructBlock):
-    text_id = blocks.CharBlock(label='Identificador de Navegacion ')
-    text_title_main = blocks.CharBlock(label='Titulo Principal:', help_text='Ejemplo: Envíenos un mensaje')
-    text_title_secondary = blocks.CharBlock(label='Titulo Segundario:', help_text='Ejemplo: Otros canales..')
-    text_description = blocks.RichTextBlock(label='Ingrese una Descripcion de contacto: ',
-                                      help_text='Se recomienda un texto menor a 40 palabras')
-    text_address = blocks.CharBlock(label='Direccion de residencia:', help_text='329 WASHINGTON ST BOSTON, MA 02108')
-    number_contact = blocks.CharBlock(label='Telefono de contacto:', help_text='(617) 557-0089')
-    email = blocks.EmailBlock(label='Correo de Contacto:', help_text='contact@example.com')
-
-    social_list = blocks.ListBlock(blocks.StructBlock([
-        ('icon', blocks.CharBlock(label='Ícono de redsocial: ', max_length=255, blank=True, null=True,
-                                  required=False, help_text=mark_safe('Agregue el texto que referencia un icono.'
-                                                                      ' Ejemplo: ion-social-facebook Lista de iconos: '
-                                                                      '<a target="_blank" '
-                                                                      'href="https://ionicons.com/v2/cheatsheet.html">'
-                                                                      'Íconos</a>'))),
-        ('url_social', blocks.URLBlock(label='Ingrese url de red social')),
-    ]), label='Añadir Red Social', required=False)
-
-    class Meta:
-        template = 'blocks/main/contact_main_block.html'
-        label = 'Bloque de contacto'
-
-
-class ExperienceBlock(blocks.StructBlock):
-    num_work = blocks.IntegerBlock(label='Ingrese el numero de trabajos completados')
-    num_years = blocks.IntegerBlock(label='Ingrese años de experiencia')
-    num_clients = blocks.IntegerBlock(label='Ingrese cantidad de clientes')
-    num_awards = blocks.IntegerBlock(label='Ingrese Cantidad de premios obtenidos')
-
-    class Meta:
-        template = 'blocks/main/experience_main_block.html'
-        label = 'Mi experiencia'
-
-
-class TestimonialBlock(blocks.StructBlock):
-
-    text_id = blocks.CharBlock(label='Identificador de Navegacion ')
-
-    Testimonial_list = blocks.ListBlock(blocks.StructBlock([
-        ('image_profile', ImageChooserBlock(required=True, label='Imagen perfil del cliente',
-                                      help_text='Seleccione una de Perfil del autor'
-                                                'Se recomienda imagen de 150x150')),
-        ('text_name', blocks.CharBlock(label='Ingrese nombre completo del autor: ')),
-        ('text_Testimonial', blocks.TextBlock(label='Ingrese Descripcion del Testimonio: ',
-                                      help_text='En este apartado se recomienda escribir un '
-                                                'texto no mayor a un parrafo')),
-    ]), label='Añadir Testimonio', required=False)
-
-    class Meta:
-        template = 'blocks/main/testimonials_main_block.html'
-        label = 'Bloque de Testimonios'
+        template = 'blocks/main/portfolio_main_block.html'
+        label = 'Bloque Portafolio'
 
 
 LAYOUT_STREAMBLOCKS = [
@@ -141,6 +74,7 @@ LAYOUT_STREAMBLOCKS = [
     ('ServiceBlock', ServiceBlock()),
     ('aboutblock', AboutBlock()),
     ('mainblock', MainBlock()),
+    ('portfolioBlock', portfolioBlock()),
 ]
 
 
@@ -294,3 +228,6 @@ class FormPage(AbstractEmailForm):
         plain_message = strip_tags(html_message)
         send_mail(self.subject, plain_message, addresses, self.from_address, html_message=html_message,
                   fail_silently=False)
+
+
+
