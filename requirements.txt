@@ -15,7 +15,7 @@ docutils==0.15.2
 draftjs-exporter==2.1.7
 html5lib==1.0.1
 idna==2.8
-Pillow==6.2.1
+Pillow==8.1.1
 puput==1.0.6
 pytz==2019.3
 requests==2.22.0
